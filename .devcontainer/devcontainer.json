@@ -1,0 +1,23 @@
+{
+    "name": "VINS-Mono",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "VSCODE_SERVER_VERSION": "1.85.2"
+        }
+    },
+    "remoteUser": "container_user",
+    "workspaceFolder": "/home/container_user/catkin_ws",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "remote.SSH.serverInstallPath": "/home/container_user/.vscode-server"
+            },
+            "extensions": [
+                "ms-iot.vscode-ros",
+                "twxs.cmake"
+            ]
+        }
+    },
+    "postCreateCommand": "sudo chown -R container_user:container_user /home/container_user"
+}
